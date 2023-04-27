@@ -18,14 +18,19 @@ Just add `img` tag in your website / README file and it will display a random me
 
 ### Using Docker
 
-To build image:
+Build docker image:
 
 ```
 docker build --tag python-docker .
 ```
 
-To run image:
+Run docker container:
 
 ```
-docker run -it -d -p 8000:8000 python-docker
+docker run -it -d -p 127.0.0.1:8000:8000 python-docker
+```
+
+Run container within a docker network:
+```
+docker run --network {network_name} --name python-docker -d python-docker -p 127.0.0.1:8000:8000
 ```
